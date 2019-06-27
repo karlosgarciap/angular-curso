@@ -1,0 +1,18 @@
+<div class="container">
+        <div class="row">
+            <h1>Servicios</h1>
+        </div>
+        <div class="row">
+            <div class="col-3">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-primary">{{ servicio.nombre }}</li>
+                        <li class="list-group-item">{{servicio.precio}}</li>
+                        <li class="list-group-item">
+                            <a [routerLink] = "['/servicios']">Volver</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -14,6 +14,8 @@ import { ServicesService } from './services/services.service';
 
 // Routes
 import { APP_ROUTING } from './app-routing.module';
+import { ServicioComponent } from './components/servicio/servicio.component';
+import { FinderComponent } from './components/shared/finder/finder.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { APP_ROUTING } from './app-routing.module';
     ServiciosComponent,
     HeaderComponent,
     BodyComponent,
-    FooterComponent
+    FooterComponent,
+    ServicioComponent,
+    FinderComponent
   ],
   imports: [  
     BrowserModule,
