@@ -1,0 +1,14 @@
+<h1>Printing segundo Componente</h1>
+<h2>Printing segundo Componente de {{titulo}}</h2>
+
+<form (submit)=addAnimal(animal)>
+        <input type="text" #animal>
+        <button>Añadir</button>
+</form>
+
+<ul>
+        <li *ngFor="let animal of animales">
+                {{ animal }}
+                <button type="button" (click)="eliminarAnimal(animal)">Eliminar</button>
+        </li>
+</ul>

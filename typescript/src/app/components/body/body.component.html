@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+          <form (submit)=addAnimal(animal)>
+              <input type="text" name="animal" #animal class="form-control margin-bottom" style="margin-bottom:15px;" placeholder="Inserta un animal">
+              <button class="btn btn-primary">Añadir</button>
+          </form>
+      
+          <ul class="list-group" style="margin-top:25px;">
+              <li *ngFor="let animal of animales" (click)="mostrarInfo(animal)" class="list-group-item">
+                  {{ animal }}
+              </li>
+          </ul>
+      </div>
+      <div class="col-sm-6">
+          <div *ngIf="show" class="card text-white bg-info mb-3" style="width: 18rem; margin-bottom: 20px;">
+            <div class="card-body">
+              <p class="card-text">Este animal tiene {{ length }} caracteres</p>
+            </div>
+          </div>
+          <div *ngIf="!show" class="card text-white bg-success mb-3" style="width: 18rem; margin-bottom: 20px;">
+            <div class="card-body">
+              <p class="card-text">La longitud total de todos los animales es de {{ totalLength }} caracteres</p>
+            </div>
+          </div>
+          <button  class="btn btn-primary" (click)="show = !show">Contar total</button>
+      </div>
+    </div>
+  </div>

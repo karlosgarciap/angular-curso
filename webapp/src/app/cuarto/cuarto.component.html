@@ -1,0 +1,9 @@
+<form>
+    <input type="text" name="nombre" [(ngModel)]="name" #nombre>
+    <input type="number" name="edad" [(ngModel)]="age" #edad>
+</form> 
+
+<div>
+    <p>Nombre:<span class="nombre">{{name}}</span></p>        
+    <p>Edad:<span class="edad">{{age}}</span></p>
+</div>

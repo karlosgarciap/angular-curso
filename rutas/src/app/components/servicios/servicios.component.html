@@ -1,0 +1,15 @@
+<div class="container">
+        <div class="row">
+            <h1>Servicios</h1>
+        </div>
+        <div class="row">
+            <div class="col-3" *ngFor="let item of servicios; let i = index">
+                <div class="card">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item bg-primary">{{item.nombre}}</li>
+                        <li class="list-group-item">{{item.precio}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
