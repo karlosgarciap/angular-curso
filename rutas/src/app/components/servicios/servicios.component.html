@@ -4,7 +4,7 @@
     </div>
     <div class="row">
         <app-servicio-card
-                (servicioSelected)="servicesService.getServicios()"
+                (servicioSelected)="verServicio($event)"
                 *ngFor="let servicio of servicios; let i = index"
                 [servicio]="servicio"
                 [i]="i">

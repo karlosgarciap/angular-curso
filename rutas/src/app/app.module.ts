@@ -9,7 +9,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BodyComponent } from './components/body/body.component';
 import { FooterComponent } from './components/footer/footer.component';
 
-//Services
+// Services
 import { ServicesService } from './services/services.service';
 
 // Routes
@@ -31,7 +31,7 @@ import { ServicioCardComponent } from './components/servicio-card/servicio-card.
     FinderComponent,
     ServicioCardComponent
   ],
-  imports: [  
+  imports: [
     BrowserModule,
     APP_ROUTING
   ],

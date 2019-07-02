@@ -32,5 +32,8 @@ export class ServiciosComponent implements OnInit {
       }
   }
 
+  verServicio(i: number) {
+      this.route.navigate('servicio', i);
+  }
 }
 

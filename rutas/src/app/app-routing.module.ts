@@ -15,7 +15,7 @@ const APP_ROUTES: Routes = [
   // path for display single product by Id
   { path: 'servicio/:id', component: ServicioComponent },
   { path: 'busqueda/:servicio', component: ServiciosComponent },
-  { path: '**', pathMatch: 'full', redirectTo:'home' },
+  { path: '**', pathMatch: 'full', redirectTo: 'home' },
 ]
 export const APP_ROUTING = RouterModule.forRoot(APP_ROUTES);
 
