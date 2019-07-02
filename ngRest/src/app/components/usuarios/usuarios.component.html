@@ -1,0 +1,8 @@
+<h2>Product List</h2>
+
+<ul class="products">
+    <li *ngFor="let user of users;">
+        <p>{{ user.nombre }}</p>
+        <a [routerLink]="['/usuario', user.id]">Ver Usuario</a>
+    </li>
+</ul>
