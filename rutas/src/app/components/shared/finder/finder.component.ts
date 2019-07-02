@@ -24,7 +24,7 @@ export class FinderComponent implements OnInit {
   }
 
   // method to find service by string triggered from finder
-  findServicio(servicio) {
+  findServicio(servicio: string) {
       //call to method inside the service
       this.servicios = this.servicioService.getServicioByString(servicio);
       console.log(this.servicios);

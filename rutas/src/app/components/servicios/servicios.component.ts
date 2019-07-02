@@ -11,26 +11,25 @@ import { ServicesService, ServiceInterface } from '../../services/services.servi
 })
 export class ServiciosComponent implements OnInit {
 
-  //crear un array de tipo interfaz personalizado creado en el servicio
-  servicios:ServiceInterface [] = [];
-  router:any;
-  
-  //Instanciar el servicio
-  constructor(private _router:Router, private _ServicesService:ServicesService, private activatedRoute: ActivatedRoute) {
-    this.router = _router;
+  // crear un array de tipo interfaz personalizado creado en el servicio
+  servicios: ServiceInterface [] = [];
+  router: any;
+
+  // Instanciar el servicio
+  constructor(private route: Router, private servicesService: ServicesService, private activatedRoute: ActivatedRoute) {
+    this.router = route;
   }
 
 
-  ngOnInit(){
-    // Controls if is called from servicios page or from finder
-    if (this._router.url == '/servicios') {
-      this.servicios  = this._ServicesService.getServicios();
-    } else {
-      this.activatedRoute.params.subscribe(params => {
-        this.servicios  = this._ServicesService.getServicioByString(params['servicio']);
-      })
-      
-    }
+  ngOnInit() {
+      // Controls if is called from servicios page or from finder
+      if (this.router.url === '/servicios') {
+          this.servicios  = this.servicesService.getServicios();
+      } else {
+          this.activatedRoute.params.subscribe(params => {
+          this.servicios  = this.servicesService.getServicioByString(params['servicio']);
+        })
+      }
   }
 
 }
