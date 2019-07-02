@@ -1,0 +1,5 @@
+<app-car
+        (carSelected)="verCar($event)"
+        *ngFor="let car of cars; let i = index"
+        [car]="car">
+</app-car>
