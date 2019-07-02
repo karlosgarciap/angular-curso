@@ -16,6 +16,7 @@ import { ServicesService } from './services/services.service';
 import { APP_ROUTING } from './app-routing.module';
 import { ServicioComponent } from './components/servicio/servicio.component';
 import { FinderComponent } from './components/shared/finder/finder.component';
+import { ServicioCardComponent } from './components/servicio-card/servicio-card.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { FinderComponent } from './components/shared/finder/finder.component';
     BodyComponent,
     FooterComponent,
     ServicioComponent,
-    FinderComponent
+    FinderComponent,
+    ServicioCardComponent
   ],
   imports: [  
     BrowserModule,

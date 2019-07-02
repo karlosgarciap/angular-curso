@@ -1,0 +1,12 @@
+<div class="col-12">
+    <div class="card">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item bg-primary">{{ servicio.nombre }}</li>
+            <li class="list-group-item">{{ servicio.precio }}</li>
+            <li class="list-group-item">
+                <!-- Create route using ID from object-->
+                <a [routerLink] = "['/servicio', servicio.id ]">Ver más</a>
+            </li>
+        </ul>
+    </div>
+</div>

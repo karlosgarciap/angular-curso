@@ -3,17 +3,11 @@
         <h1>Servicios</h1>
     </div>
     <div class="row">
-        <div class="col-3" *ngFor="let item of servicios; let i = index">
-            <div class="card">
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item bg-primary">{{item.nombre}}</li>
-                    <li class="list-group-item">{{item.precio}}</li>
-                    <li class="list-group-item">
-                        <!-- Create route using ID from object-->
-                        <a [routerLink] = "['/servicio', item.id ]">Ver más</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+        <app-servicio-card
+                (servicioSelected)="servicesService.getServicios()"
+                *ngFor="let servicio of servicios; let i = index"
+                [servicio]="servicio"
+                [i]="i">
+        </app-servicio-card>
     </div>
 </div>
