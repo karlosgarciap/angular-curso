@@ -32,6 +32,7 @@ export class ServiciosComponent implements OnInit {
       }
   }
 
+  // Parent method
   verServicio(i: number) {
       this.router.navigate('servicio', i);
   }
