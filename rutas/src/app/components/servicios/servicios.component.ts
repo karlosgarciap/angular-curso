@@ -28,12 +28,12 @@ export class ServiciosComponent implements OnInit {
       } else {
           this.activatedRoute.params.subscribe(params => {
           this.servicios  = this.servicesService.getServicioByString(params['servicio']);
-        })
+        });
       }
   }
 
   verServicio(i: number) {
-      this.route.navigate('servicio', i);
+      this.router.navigate('servicio', i);
   }
 }
 
