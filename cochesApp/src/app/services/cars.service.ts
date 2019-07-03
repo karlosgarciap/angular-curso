@@ -3,8 +3,6 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CarsService {
 
-  constructor() { }
-
   private cars: CarInterface[] =
       [
         {
@@ -73,8 +71,16 @@ export class CarsService {
         }
       ];
 
+
+        constructor() {
+            console.log('Service loaded');
+        }
         getCars() {
             return this.cars;
+        }
+
+        getCarById(id) {
+            return this.cars[id];
         }
   }
 

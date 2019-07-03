@@ -10,6 +10,7 @@ export class CarComponent implements OnInit {
   // Definir inputs y Output en el Card
 
   @Input() car: any = {};
+  @Input() i: number;
   @Output() carSelected: EventEmitter<number>;
 
   constructor() {
@@ -21,7 +22,7 @@ export class CarComponent implements OnInit {
 
   // metodo que escucha
 
-  verCar(i: number) {
-    this.carSelected.emit(i);
+  verCar() {
+    this.carSelected.emit(this.i);
   }
 }

@@ -3,7 +3,7 @@ import { ServicesService } from 'src/app/services/services.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-finder',
+  selector: 'app-finder-rutas',
   templateUrl: './finder.component.html',
   styleUrls: ['./finder.component.css']
 })
