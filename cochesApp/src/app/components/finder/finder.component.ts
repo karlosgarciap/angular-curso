@@ -15,7 +15,13 @@ export class FinderComponent implements OnInit {
   }
 
   search(str: string, precio: number, garantia: number, cambio: string){
+    console.log(str);
+    console.log(precio);
+    console.log(garantia);
+    console.log(cambio);
     this.router.navigate(['lista-cars', str, precio, garantia, cambio]);
   }
+
+
 
 }

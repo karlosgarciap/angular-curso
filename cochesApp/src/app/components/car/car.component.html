@@ -1,1 +1,16 @@
-<p>car works!</p>
+<article>
+    <div class="image-container">
+        <img src="{{ car.img }}"  />
+    </div>
+    <div class="car-info">
+        <h3 class="precio">{{car.precio}} €</h3>
+        <ul>
+            <li>Garantía: {{ car.garantia }}</li>
+            <li>Cambio: {{ car.cambio }}</li>
+        </ul>
+        <p>{{ car.nombre }}</p>
+    </div>
+    <div class="more-info">
+        <a [routerLink]="['/car', car.id]" class="btn-primary">Ver ficha</a>
+    </div>
+</article>

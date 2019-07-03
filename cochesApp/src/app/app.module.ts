@@ -11,6 +11,7 @@ import { BodyComponent } from './components/body/body.component';
 import { CarComponent } from './components/car/car.component';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { CarsService } from './services/cars.service';
+import { CarItemComponent } from './components/car-item/car-item.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CarsService } from './services/cars.service';
     FinderComponent,
     BodyComponent,
     CarComponent,
-    CarsListComponent
+    CarsListComponent,
+    CarItemComponent
   ],
   imports: [
     BrowserModule,

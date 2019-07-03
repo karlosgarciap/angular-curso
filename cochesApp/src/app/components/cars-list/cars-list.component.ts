@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {CarInterface, CarsService} from '../../services/cars.service';
 
@@ -8,8 +8,6 @@ import {CarInterface, CarsService} from '../../services/cars.service';
   styleUrls: ['./cars-list.component.css']
 })
 export class CarsListComponent implements OnInit {
-
-
 
   cars: CarInterface [] = [];
 
@@ -22,7 +20,9 @@ export class CarsListComponent implements OnInit {
     console.log(this.cars);
   }
 
-
+    // Parent method
+    verCar(i: number) {
+        this.router.navigate('car', i);
+    }
 }
-
 
