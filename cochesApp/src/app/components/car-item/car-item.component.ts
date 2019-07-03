@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ServicesService} from "../../../../../rutas/src/app/services/services.service";
-import {ActivatedRoute} from "@angular/router";
-import {CarsService} from "../../services/cars.service";
+import {ActivatedRoute} from '@angular/router';
+import {CarsService} from '../../services/cars.service';
 
 @Component({
   selector: 'app-car-item',
@@ -15,8 +14,8 @@ export class CarItemComponent implements OnInit {
   constructor(private activeRoutes: ActivatedRoute, private carService: CarsService) {
 
       this.activeRoutes.params.subscribe(params => {
-          this.car = carService.getCarById(params['id']);
-      })
+          this.car = carService.getCarById(params.id);
+      });
 
 
   }

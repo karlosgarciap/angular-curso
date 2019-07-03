@@ -9,8 +9,9 @@
             <li>Cambio: {{ car.cambio }}</li>
         </ul>
         <p>{{ car.nombre }}</p>
+        <p><small>{{ car.id }}</small></p>
     </div>
     <div class="more-info">
-        <a [routerLink]="['/car', car.id]" class="btn-primary">Ver ficha</a>
+        <button (click)="verCar(car.id)" class="btn-primary">Ver ficha</button>
     </div>
 </article>

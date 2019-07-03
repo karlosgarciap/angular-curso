@@ -1,8 +1,14 @@
-<h1>Coche APP</h1>
-
-<app-car
-        (carSelected)="verCar($event)"
-        *ngFor="let car of cars;"
-        [car]="car"
-        [i]="i">
-</app-car>
+<article>
+    <div class="image-container">
+        <img src="{{ car.img }}"  />
+    </div>
+    <div class="car-info">
+        <h3>{{ car.nombre }}</h3>
+        <h3 class="precio">{{car.precio}} €</h3>
+        <ul>
+            <li>Garantía: {{ car.garantia }}</li>
+            <li>Cambio: {{ car.cambio }}</li>
+        </ul>
+        <p><small>{{ car.id }}</small></p>
+    </div>
+</article>

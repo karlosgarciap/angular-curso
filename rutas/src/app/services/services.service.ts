@@ -3,9 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 
 export class ServicesService {
-    //Declarar un array con el interfaz qe he creado abajo
-    private services:ServiceInterface[] = 
-  [
+    // Declarar un array con el interfaz qe he creado abajo
+    private services: ServiceInterface[] = [
     {
       id: 0,
       nombre: 'Marketing',

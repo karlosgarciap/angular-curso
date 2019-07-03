@@ -2,10 +2,10 @@
     <li class="list-group-item active">Busqueda de coches</li>
     <li class="list-group-item">
         <input #str type="text" class="form-control">
-        <button type="button" class="btn btn-primary">Buscar</button>
+        <button (click)="search(str.value, precio.value, garantia.value, cambio.value)" type="button" class="btn btn-primary">Buscar</button>
         <hr>
         <h6>Precio</h6>
-        <select #precio (click)="search(str.value,precio.value,garantia.value,cambio.value)" class="browser-default custom-select">
+        <select #precio (click)="search(str.value, precio.value, garantia.value, cambio.value)" class="browser-default custom-select">
             <option value="0">Todos</option>
             <option value="16000">Menos de 16000</option>
             <option value="20000">Menos de 20000</option>

@@ -3,6 +3,8 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class CarsService {
 
+    carSearch: CarInterface [] = [];
+
   private cars: CarInterface[] =
       [
         {
@@ -75,12 +77,33 @@ export class CarsService {
         constructor() {
             console.log('Service loaded');
         }
+
         getCars() {
             return this.cars;
         }
 
-        getCarById(id) {
-            return this.cars[id];
+        getCarById(id: number) {
+            let car: CarInterface;
+            this.cars.forEach(element => {
+                if (element.id == id) {
+                    car = element;
+                }
+            });
+
+            return car;
+        }
+
+        getCarsByParams(str: string, precio: number, garantia: number, cambio: string) {
+            if (str.length > 0) {
+
+            this.cars.forEach(element => {
+                if (element.nombre.toLowerCase().includes(str)) {
+                    this.carSearch.push(element);
+                }
+            });
+
+            }
+            return false;
         }
   }
 

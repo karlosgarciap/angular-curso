@@ -9,20 +9,24 @@ import {CarInterface, CarsService} from '../../services/cars.service';
 })
 export class CarsListComponent implements OnInit {
 
-  cars: CarInterface [] = [];
+    cars: CarInterface [] = [];
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute, private carsService: CarsService) {
+    constructor(private router: Router, private activatedRoute: ActivatedRoute, private carsService: CarsService) {
+        this.activatedRoute.params.subscribe(params => {
+            // this.cars = this.carsService.getCarsByParams(params.str, params.precio, params.garantia, params.cambio);
+        });
+    }
 
-  }
+    ngOnInit() {
+      this.cars = this.carsService.getCars();
+      // console.log(this.cars);
+        // this.router.navigate(['/lista-cars']);
 
-  ngOnInit() {
-    this.cars = this.carsService.getCars();
-    console.log(this.cars);
-  }
+    }
 
     // Parent method
     verCar(i: number) {
-        this.router.navigate('car', i);
+         this.router.navigate(['/details', i]);
     }
 }
 

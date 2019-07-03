@@ -1,0 +1,29 @@
+.image-container img {
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(32,32,32,.2);
+}
+
+h3 {
+    margin:10px 0;
+    font-size: 28px;
+    color: #66b8ea;
+}
+
+.car-info ul {
+    list-style-type: none;
+    display: flex;
+    padding: 0;
+}
+
+.car-info ul li {
+    border-right: 1px solid #adadad;
+    padding: 0 10px;
+    font-weight: normal;
+    font-size: 13px;
+    color: #adadad;
+}
+
+.car-info ul li:first-child {
+    padding-left: 0;
+}

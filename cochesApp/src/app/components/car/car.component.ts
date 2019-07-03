@@ -20,9 +20,8 @@ export class CarComponent implements OnInit {
   ngOnInit() {
   }
 
-  // metodo que escucha
 
-  verCar() {
-    this.carSelected.emit(this.i);
+  verCar(i: number) {
+    this.carSelected.emit(i);
   }
 }

@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppRoutingModule } from './app-routing.module';
+import {APP_ROUTING, AppRoutingModule} from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
@@ -12,6 +12,8 @@ import { CarComponent } from './components/car/car.component';
 import { CarsListComponent } from './components/cars-list/cars-list.component';
 import { CarsService } from './services/cars.service';
 import { CarItemComponent } from './components/car-item/car-item.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { BannersComponent } from './components/banners/banners.component';
 
 @NgModule({
   declarations: [
@@ -23,11 +25,13 @@ import { CarItemComponent } from './components/car-item/car-item.component';
     BodyComponent,
     CarComponent,
     CarsListComponent,
-    CarItemComponent
+    CarItemComponent,
+    BannerComponent,
+    BannersComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    APP_ROUTING
   ],
   providers: [CarsService],
   bootstrap: [AppComponent]
