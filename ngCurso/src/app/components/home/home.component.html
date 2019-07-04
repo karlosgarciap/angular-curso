@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <ul class="list-group m-t">
+                <li class="list-group-item active">Busqueda de Paises</li>
+                <li class="list-group-item">
+                    <input #str type="text" class="form-control">
+                    <button type="button" class="btn btn-primary">Buscar</button>
+                    <hr>
+                    <h6>Selecciona un continente</h6>
+                    <select #region (change)="search(region.value)" class="browser-default custom-select">
+                        <option value="">Todos</option>
+                        <option value="africa">Africa</option>
+                        <option value="americas">America</option>
+                        <option value="europe">Europa</option>
+                        <option value="asia">Asia</option>
+                        <option value="oceania">Oceania</option>
+                    </select>
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div class="row">
+                <app-pais
+                    class="col-md-3"
+                    *ngFor="let pais of paises;"
+                    (paisSelected) = "verPais($event)"
+                    [pais]="pais"></app-pais>
+            </div>
+        </div>
+    </div>
+</div>
