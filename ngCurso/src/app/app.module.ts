@@ -7,7 +7,6 @@ import { HomeComponent } from './components/home/home.component';
 import { DetailComponent } from './components/detail/detail.component';
 import { SearchComponent } from './components/search/search.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FinderComponent } from './components/finder/finder.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BodyComponent } from './components/body/body.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
@@ -20,7 +19,6 @@ import { PaisComponent } from './components/pais/pais.component';
     DetailComponent,
     SearchComponent,
     NavbarComponent,
-    FinderComponent,
     SidebarComponent,
     BodyComponent,
     PaisComponent

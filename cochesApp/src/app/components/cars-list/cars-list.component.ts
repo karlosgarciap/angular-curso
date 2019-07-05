@@ -18,10 +18,9 @@ export class CarsListComponent implements OnInit {
     }
 
     ngOnInit() {
-      this.cars = this.carsService.getCars();
-      // console.log(this.cars);
+        this.cars = this.carsService.getCars();
+        // console.log(this.cars);
         // this.router.navigate(['/lista-cars']);
-
     }
 
     // Parent method

@@ -1,6 +1,7 @@
-import { Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
+import {PaisService} from "../../pais.service";
 
 @Component({
   selector: 'app-home',
@@ -8,19 +9,18 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-    paises: any[] = [];
 
     regionUrl: string = 'https://restcountries.eu/rest/v2/region/';
 
-    constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute) {
+    @Input() paises: any[] = [];
+
+    constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute, private paisService: PaisService) {
     }
 
     ngOnInit() {
-        this.http.get('https://restcountries.eu/rest/v2/all').subscribe(
-            (resp: any) => {
-                this.paises = resp;
-            }
-        );
+        this.paisService.getPaises().subscribe(
+            (res:any) => { this.paises = res; }
+            );
     }
 
     // Parent method
@@ -31,18 +31,12 @@ export class HomeComponent implements OnInit {
             this.regionUrl = 'https://restcountries.eu/rest/v2/region/';
         }
 
-        this.http.get(this.regionUrl + region).subscribe(
+        this.paisService.getPaisesByRegion(region).subscribe(
             (resp: any) => {
-                console.log(resp);
                 this.paises = resp;
             }
         );
 
-    }
-
-    // Parent method
-    verPais(i: number) {
-        this.router.navigate(['/details', i]);
     }
 
 

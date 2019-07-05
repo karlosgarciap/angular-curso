@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+<section>
+    <ul class="list-group m-t finder">
+        <li class="list-group-item active">Busqueda de Paises</li>
+        <li class="list-group-item">
+            <input #str type="text" class="form-control">
+            <button type="button" (click)="buscar(str.value)" class="btn btn-primary">Buscar</button>
+            <hr>
+            <h6>Selecciona un continente</h6>
+            <select #region (change)="search(region.value)" class="browser-default custom-select">
+                <option value="">Todos</option>
+                <option value="africa">Africa</option>
+                <option value="americas">America</option>
+                <option value="europe">Europa</option>
+                <option value="asia">Asia</option>
+                <option value="oceania">Oceania</option>
+            </select>
+        </li>
+    </ul>
+</section>

@@ -1,8 +1,11 @@
 <div class="pais_container">
+    <div class="image-container">
+        <img src="{{ pais.flag }}" class="img-thumbnail" />
+    </div>
+    <div>
     <ul class="list">
         <li>{{ pais.name }}</li>
-        <li>{{ pais.alpha3Code }}</li>
     </ul>
-
-    <button (click)="verPais(pais.alpha3Code)" class="btn-primary">Ver ficha</button>
+    </div>
+    <button (click)="verPais(pais.alpha3Code)" class="btn btn-primary">Ver ficha</button>
 </div>
