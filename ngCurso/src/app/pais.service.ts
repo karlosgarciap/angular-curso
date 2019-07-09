@@ -67,6 +67,9 @@ export class PaisService {
         return this.http.get(this.baseUrl + this.regionUrl + region);
     }
 
+    getRandomPais() {
+        return this.http.get(this.baseUrl + 'all');
+    }
     /*
     getPaisesByString(str:string) {
         if (str != '') {

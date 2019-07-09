@@ -11,6 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { BodyComponent } from './components/body/body.component';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { PaisComponent } from './components/pais/pais.component';
+import { GameComponent } from './components/game/game.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PaisComponent } from './components/pais/pais.component';
     NavbarComponent,
     SidebarComponent,
     BodyComponent,
-    PaisComponent
+    PaisComponent,
+    GameComponent
   ],
   imports: [
     BrowserModule,
