@@ -11,10 +11,10 @@ export class DetailComponent implements OnInit {
 
   pais: any = {};
   regionUrl = 'https://restcountries.eu/rest/v2/alpha/'
+
   constructor(private http: HttpClient , private activeRoutes: ActivatedRoute) {
-    console.log (this.activeRoutes.params);
     this.activeRoutes.params.subscribe(params => {
-      this.http.get(this.regionUrl + params.i).subscribe(
+      this.http.get(this.regionUrl + params['code']).subscribe(
           (resp: any) => {
             console.log(resp);
             this.pais = resp;

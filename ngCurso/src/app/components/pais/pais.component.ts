@@ -9,8 +9,8 @@ import { Input, Output, EventEmitter } from '@angular/core';
 export class PaisComponent implements OnInit {
 
   @Input() pais: any = {};
-  @Input() i: number;
-  @Output() paisSelected: EventEmitter<number>;
+  @Output() paisSelected: EventEmitter<string>;
+
   constructor() {
     this.paisSelected = new EventEmitter();
   }
@@ -18,7 +18,9 @@ export class PaisComponent implements OnInit {
   ngOnInit() {
   }
 
-  verPais(i: number) {
-    this.paisSelected.emit(i);
+  // crear el metodo en el hijo para que pueda ser invocado.
+  verPais(code: string) {
+    console.log(code);
+    this.paisSelected.emit(code);
   }
 }

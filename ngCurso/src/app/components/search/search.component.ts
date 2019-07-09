@@ -28,9 +28,9 @@ export class SearchComponent implements OnInit {
     }
 
 
-    // Parent method
-    verPais(i: number) {
-        this.router.navigate(['/details', i]);
+    // Redirigir a la url de detalle enviando la variable.
+    verPais(code: string) {
+        this.router.navigate(['/detail', code]);
     }
 
 }

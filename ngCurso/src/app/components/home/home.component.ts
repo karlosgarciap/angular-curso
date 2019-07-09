@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {ActivatedRoute, Router} from '@angular/router';
-import {PaisService} from "../../pais.service";
+import {PaisService} from '../../pais.service';
 
 @Component({
   selector: 'app-home',
@@ -12,14 +12,17 @@ export class HomeComponent implements OnInit {
 
     regionUrl: string = 'https://restcountries.eu/rest/v2/region/';
 
-    @Input() paises: any[] = [];
+    paises: any[] = [];
 
-    constructor(private http: HttpClient, private router: Router, private activatedRoute: ActivatedRoute, private paisService: PaisService) {
+    constructor(private http: HttpClient, private router: Router,
+                private activatedRoute: ActivatedRoute,
+                private paisService: PaisService) {
+
     }
 
     ngOnInit() {
         this.paisService.getPaises().subscribe(
-            (res:any) => { this.paises = res; }
+            (res: any) => { this.paises = res; }
             );
     }
 
@@ -39,5 +42,11 @@ export class HomeComponent implements OnInit {
 
     }
 
+
+    // Redirigir a la url de detalle enviando la variable.
+    verPais(code: string) {
+        console.log(code);
+        this.router.navigate(['/detail', code]);
+    }
 
 }

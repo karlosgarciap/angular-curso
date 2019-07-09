@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -34,11 +35,11 @@ export class PaisService {
 
     constructor(private http: HttpClient) { }
 
-    getPaises() {
+    getPaises(): Observable<any> {
         return this.http.get(this.baseUrl + 'all');
     }
 
-    getPaisesByParam(param:string) {
+    getPaisesByParam(param: string): Observable<any> {
 
         if (param === '') {
             return this.http.get(this.baseUrl + 'all');
@@ -59,7 +60,7 @@ export class PaisService {
         }
     }
 
-    getPaisesByRegion(region:string) {
+    getPaisesByRegion(region: string): Observable<any> {
         if (region === '') {
             return this.http.get(this.baseUrl + 'all');
         }

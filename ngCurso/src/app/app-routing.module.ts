@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {HomeComponent} from './components/home/home.component';
-import {DetailComponent} from './components/detail/detail.component';
-import {SearchComponent} from "./components/search/search.component";
+import { HomeComponent } from './components/home/home.component';
+import { DetailComponent } from './components/detail/detail.component';
+import { SearchComponent } from './components/search/search.component';
 
 const routes: Routes = [];
 
 const APP_ROUTES: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'search/:paises', component: SearchComponent },
-  { path: 'detail/:alpha3Code', component: DetailComponent },
+  { path: 'detail/:code', component: DetailComponent },
   { path: '**', pathMatch: 'full', redirectTo: 'home' }
 ];
 

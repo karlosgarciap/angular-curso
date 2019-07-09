@@ -1,5 +1,11 @@
-<div class="pais_container">
-    <ul class="list">
-        <li>{{ pais.name }}</li>
-    </ul>
+<div class="pais_container" style="display: flex;">
+    <div class="image-container">
+        <img src="{{ pais.flag }}" class="img-thumbnail" style="width:300px;" />
+    </div>
+    <div style="margin-left: 15px;">
+        <h1>{{ pais.name }}</h1>
+        <p><small>Capital: {{ pais.capital }}</small></p>
+        <p>Habitantes: {{ pais.population }}</p>
+        <a routerLink="['/search', pais.region]" class="btn btn-primary">Volver</a>
+    </div>
 </div>
