@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from "@angular/router";
-import {PaisService} from "../../pais.service";
+import {ActivatedRoute, Router} from '@angular/router';
+import {PaisService} from '../../pais.service';
 
 @Component({
   selector: 'app-search',
@@ -18,7 +18,7 @@ export class SearchComponent implements OnInit {
 
         this.activatedRoute.params.subscribe(params => {
 
-            this.paisService.getPaisesByParam(params['paises']).subscribe(
+            this.paisService.getPaisesByParam(params['region']).subscribe(
                 (resp: any) => {
                     this.paises = resp;
                 }
