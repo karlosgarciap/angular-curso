@@ -12,11 +12,51 @@ export class PaisService {
     regionUrl: string = 'region/';
     nameUrl: string = 'name/';
 
-    constructor(private http: HttpClient) { }
+    regions: any[] = [
+        {
+            id: 0,
+            nombre: 'africa'
+        },{
+            id: 1,
+            nombre: 'americas'
+        },{
+            id: 2,
+            nombre: 'asia'
+        },{
+            id: 3,
+            nombre: 'europe'
+        },{
+            id: 4,
+            nombre: 'oceania'
+        }
+    ];
 
+
+    constructor(private http: HttpClient) { }
 
     getPaises() {
         return this.http.get(this.baseUrl + 'all');
+    }
+
+    getPaisesByParam(param:string) {
+
+        if (param === '') {
+            return this.http.get(this.baseUrl + 'all');
+        }
+
+        let isRegion = false;
+
+        this.regions.forEach(function(element) {
+            if (param === element.nombre) {
+                isRegion = true;
+            }
+        });
+
+        if (isRegion) {
+            return this.http.get(this.baseUrl + this.regionUrl + param);
+        } else {
+            return this.http.get(this.baseUrl + this.nameUrl + param);
+        }
     }
 
     getPaisesByRegion(region:string) {
@@ -26,11 +66,15 @@ export class PaisService {
         return this.http.get(this.baseUrl + this.regionUrl + region);
     }
 
+    /*
     getPaisesByString(str:string) {
-        if (region === '') {
+        if (str != '') {
             return this.http.get(this.baseUrl + 'all');
+        } else {
+            return this.http.get(this.baseUrl + this.nameUrl + str);
         }
 
-        return this.http.get(this.baseUrl + this.nameUrl + str);
+
     }
+    */
 }

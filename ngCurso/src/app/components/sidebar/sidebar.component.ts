@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
   }
 
     search(region:string) {
-        this.paises = this.paisService.getPaisesByRegion(region).subscribe(
+        this.paisService.getPaisesByParam(region).subscribe(
             (resp: any) => {
                 this.paises = resp;
             }
@@ -26,7 +26,7 @@ export class SidebarComponent implements OnInit {
     }
 
     buscar(str: string) {
-        this.paises = this.paisService.getPaisesByString(str).subscribe(
+        this.paisService.getPaisesByParam(str).subscribe(
             (resp: any) => {
                 this.paises = resp;
             }

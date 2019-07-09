@@ -15,13 +15,16 @@ export class SearchComponent implements OnInit {
 
     ngOnInit() {
         console.log(this.activatedRoute.paramMap);
+
         this.activatedRoute.params.subscribe(params => {
-            this.paisService.getPaisesByRegion(params['paises']).subscribe(
+
+            this.paisService.getPaisesByParam(params['paises']).subscribe(
                 (resp: any) => {
                     this.paises = resp;
                 }
             );
         });
+
     }
 
 
