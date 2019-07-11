@@ -1,6 +1,39 @@
-<ul class="list-group m-t finder">
-    <li class="list-group-item active">¡Juega al Quiz!</li>
-</ul>
-<h2>¿Cual es la capital de...?</h2>
-<h3>{{ pais }}</h3>
+<div class="row">
+    <div class="col-md-9">
+        <ul class="list-group m-t finder">
+            <li class="list-group-item active">¡Juega al Quiz!</li>
+            <li class="list-group-item ">
+                <div class="quiz-container">
+                    <h3>¿Cual es la capital de...?</h3>
+                    <div class="quiz-flag">
+                        <img src="{{ pais.flag }}" alt="{{ pais.name}}">
+                        <h4>{{ pais.name }}</h4>
+                    </div>
+                    <div class="quiz-answers">
+                        <ul>
+                            <li *ngFor="let answer of answers">
+                                <button (click)="testAnswer(answer, pais.capital)">{{answer}}</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="col-md-3">
+        <ul class="list-group m-t finder">
+            <li class="list-group-item active">¡Juega al Quiz!</li>
+            <li class="list-group-item ">
+                <div class="quiz-container">
+                    <h5>Número de preguntas</h5>
+                    <p>{{numberOfQuestions}}</p>
+                    <h5>Respuestas acertadas</h5>
+                    <p>{{rightAnswers}}</p>
+                    <h5>Porcentaje de efectividad</h5>
+                    <p>{{accuracy}} %</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 

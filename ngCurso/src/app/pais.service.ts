@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 export class PaisService {
 
     paises: any[] = [];
+    pais: any = {};
 
     baseUrl: string = 'https://restcountries.eu/rest/v2/';
     regionUrl: string = 'region/';
@@ -69,7 +70,9 @@ export class PaisService {
 
     getRandomPais() {
         return this.http.get(this.baseUrl + 'all');
+
     }
+
     /*
     getPaisesByString(str:string) {
         if (str != '') {
