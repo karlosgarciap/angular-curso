@@ -1,0 +1,12 @@
+body {
+    background-color: #f1f1f1;
+}
+
+input {
+    width: 100%;
+    border-radius: 3px;
+    border: 1px solid gainsboro;
+    padding: 5px 10px;
+    color: darkgrey;
+    margin-bottom: 15px;
+}
