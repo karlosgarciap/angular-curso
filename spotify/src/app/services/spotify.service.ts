@@ -10,7 +10,7 @@ export class SpotifyService {
 
     constructor(private http: HttpClient, ) { }
 
-    accessToken = 'BQA7UnPdMYDLg81QMw7olxXck9IPQ5cV3uzrkNXZpVsANf9BKjf7kZE3LVBb1WoJ8mkQTFO-BZ1OkwZxd0Y';
+    accessToken = 'BQCNmXZTVD-83Xh8f567fM_WTlvZL0R0Og08TyxIFntumJ-gS702jQ3JhGpqk3yPLc8mnNMsTYVO6wYJKlA';
 
     getNewReleases() {
 
@@ -28,6 +28,22 @@ export class SpotifyService {
           Authorization: 'Bearer ' + this.accessToken
         });
 
-        return this.http.get('https://api.spotify.com/v1/search?type=album&q=' + str, {headers});
+        return this.http.get('https://api.spotify.com/v1/search?type=artist&q=' + str, {headers});
+    }
+
+    getArtistById(id) {
+        // crear la constante headers para meter el token y el tipo
+        const headers = new HttpHeaders({
+            Authorization: 'Bearer ' + this.accessToken
+        });
+        return this.http.get('https://api.spotify.com/v1/artists/' + id, {headers});
+    }
+
+    getTopTracksByArtistId(id) {
+        // crear la constante headers para meter el token y el tipo
+        const headers = new HttpHeaders({
+            Authorization: 'Bearer ' + this.accessToken
+        });
+        return this.http.get('https://api.spotify.com/v1/artists/' + id + '/top-tracks?country=ES', {headers});
     }
 }

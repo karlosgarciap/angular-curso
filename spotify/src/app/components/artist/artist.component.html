@@ -1,0 +1,13 @@
+<div class="jumbotron" style="background-image: url('{{ artist.images[0].url }}')">
+    <img src="{{ artist.images[0].url }}" alt="" width="300">
+    <h1 class="display-4">{{ artist.name }}</h1>
+    <div class="lead">
+        <ul style="list-style-type: none; padding:0; display:flex;">
+            <li *ngFor="let genre of artist.genres" style="margin-right: 5px;">
+                <span class="badge badge-primary">{{ genre }}</span>
+            </li>
+        </ul>
+    </div>
+    <hr class="my-4">
+    <button (click)="verTopTracks(artist.id)" class="btn-primary">Ver ficha</button>
+</div>

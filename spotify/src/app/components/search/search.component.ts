@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {SpotifyService} from "../../services/spotify.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-search',
@@ -8,16 +9,21 @@ import {SpotifyService} from "../../services/spotify.service";
 })
 export class SearchComponent implements OnInit {
 
-  albums: any = {};
+  artists: any = {};
 
-  constructor(private spotify: SpotifyService) { }
+
+  constructor(private spotify: SpotifyService, private activeRoutes: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }
 
   search(str: string) {
     this.spotify.search(str).subscribe(
-        (data: any) => (this.albums = data.albums.items)
+        (data: any) => (this.artists = data.artists.items)
     );
+  }
+
+  verArtista(id) {
+    this.router.navigate(['/artist', id]);
   }
 }

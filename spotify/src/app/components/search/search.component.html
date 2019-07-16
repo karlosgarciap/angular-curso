@@ -6,16 +6,14 @@
             </div>
         </div>
         <div class="row">
-            <div *ngFor="let album of albums" class="col-md-3">
+            <div *ngFor="let artist of artists" class="col-md-3">
                 <div class="card">
-                    <img class="card-img-top img-thumbnail" src="{{ album.images[0].url }}" style="width:100%;" alt="Card image cap">
+                    <div>
+                        <img class="card-img-top img-thumbnail" src="{{ artist.images[0].url }}" style="width:100%;" alt="Card image cap">
+                    </div>
                     <div class="card-body">
-                        <h5 class="card-title">{{ album.name }}</h5>
-                        <ul style="display: flex; list-style-type: none; padding: 0;">
-                            <li *ngFor="let artista of album.artists" style="margin-right: 5px;">
-                                <span class="badge badge-primary">{{ artista.name }}</span>
-                            </li>
-                        </ul>
+                        <h5 class="card-title">{{ artist.name }}</h5>
+                        <button (click)="verArtista(artist.id)" class="btn-primary">Ver ficha</button>
                     </div>
                 </div>
             </div>

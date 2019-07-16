@@ -9,6 +9,8 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
 import {SpotifyService} from './services/spotify.service';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {APP_ROUTING} from './app-routing.module';
+import { ArtistComponent } from './components/artist/artist.component';
+import { ToptracksComponent } from './components/toptracks/toptracks.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +18,8 @@ import {APP_ROUTING} from './app-routing.module';
     HomeComponent,
     SearchComponent,
     NavbarComponent,
+    ArtistComponent,
+    ToptracksComponent,
   ],
   imports: [
     BrowserModule,
