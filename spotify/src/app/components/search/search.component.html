@@ -9,7 +9,9 @@
             <div *ngFor="let artist of artists" class="col-md-3">
                 <div class="card">
                     <div>
-                        <img class="card-img-top img-thumbnail" src="{{ artist.images[0].url }}" style="width:100%;" alt="Card image cap">
+                        <img class="card-img-top img-thumbnail"
+                             src="{{ artist.images | noImage }}"
+                             style="width:100%;" alt="Card image cap">
                     </div>
                     <div class="card-body">
                         <h5 class="card-title">{{ artist.name }}</h5>

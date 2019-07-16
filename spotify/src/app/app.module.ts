@@ -11,6 +11,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import {APP_ROUTING} from './app-routing.module';
 import { ArtistComponent } from './components/artist/artist.component';
 import { ToptracksComponent } from './components/toptracks/toptracks.component';
+import { NoImagePipe } from './pipes/no-image.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ToptracksComponent } from './components/toptracks/toptracks.component';
     NavbarComponent,
     ArtistComponent,
     ToptracksComponent,
+    NoImagePipe,
   ],
   imports: [
     BrowserModule,
