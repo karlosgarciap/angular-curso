@@ -10,7 +10,7 @@ export class HomeComponent implements OnInit {
   albums: any[] = [];
   constructor(private spotify: SpotifyService) {
     this.spotify.getNewReleases().subscribe(
-        (data: any) => (this.albums = data.albums.items)
+        (data: any) => (this.albums = data)
 
     );
   }

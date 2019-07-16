@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {map} from "rxjs/operators";
 
 
 // providedIn: root permite no tener que incluirlo en providers (app.module.ts) gracias a las ultimas versiones de angular
@@ -8,42 +9,40 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 })
 export class SpotifyService {
 
-    constructor(private http: HttpClient, ) { }
+    constructor(private http: HttpClient) { }
 
-    accessToken = 'BQCNmXZTVD-83Xh8f567fM_WTlvZL0R0Og08TyxIFntumJ-gS702jQ3JhGpqk3yPLc8mnNMsTYVO6wYJKlA';
+    accessToken = 'BQCder38qiQppWGpVMQ0y-p4wX3iP_VWZRnAIEzZ017DgNAq8uAPbz4D4PB9_jEhNDW1NDCR2dZA565C4t4';
+
+    getQuery(query: string) {
+            const url = 'https://api.spotify.com/v1/' + query;
+
+            // crear la constante headers para meter el token y el tipo
+            const headers = new HttpHeaders({
+                Authorization: 'Bearer ' + this.accessToken
+            });
+
+            return this.http.get(url, {headers});
+    }
 
     getNewReleases() {
-
-        // crear la constante headers para meter el token y el tipo
-        const headers = new HttpHeaders({
-          Authorization: 'Bearer ' + this.accessToken
-        });
-
-        return this.http.get('https://api.spotify.com/v1/browse/new-releases?country=es&limit=20', {headers});
+        return this.getQuery('browse/new-releases?country=es&limit=20')
+            .pipe( map(data => data['albums'].items));
     }
 
     search(str) {
-        // crear la constante headers para meter el token y el tipo
-        const headers = new HttpHeaders({
-          Authorization: 'Bearer ' + this.accessToken
-        });
-
-        return this.http.get('https://api.spotify.com/v1/search?type=artist&q=' + str, {headers});
+        return this.getQuery('search?type=artist&q=' + str)
+            .pipe( map(data => data['artists'].items));
     }
 
     getArtistById(id) {
-        // crear la constante headers para meter el token y el tipo
-        const headers = new HttpHeaders({
-            Authorization: 'Bearer ' + this.accessToken
-        });
-        return this.http.get('https://api.spotify.com/v1/artists/' + id, {headers});
+
+        return this.getQuery('artists/' + id)
+            .pipe( map(data => data));
     }
 
     getTopTracksByArtistId(id) {
-        // crear la constante headers para meter el token y el tipo
-        const headers = new HttpHeaders({
-            Authorization: 'Bearer ' + this.accessToken
-        });
-        return this.http.get('https://api.spotify.com/v1/artists/' + id + '/top-tracks?country=ES', {headers});
+
+        return this.getQuery('artists/' + id + '/top-tracks?country=ES')
+            .pipe( map(data => data));
     }
 }
