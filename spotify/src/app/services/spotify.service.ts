@@ -11,7 +11,7 @@ export class SpotifyService {
 
     constructor(private http: HttpClient) { }
 
-    accessToken = 'BQCder38qiQppWGpVMQ0y-p4wX3iP_VWZRnAIEzZ017DgNAq8uAPbz4D4PB9_jEhNDW1NDCR2dZA565C4t4';
+    accessToken = 'BQBwC10lpKxhWZzW6iiffD4n28BnfIQpykCTe0XVX_qkgHjikm6Q3gvuzovXgYh4G7ggdY8XwAG5jBRthDg';
 
     getQuery(query: string) {
             const url = 'https://api.spotify.com/v1/' + query;

@@ -12,7 +12,10 @@ export class NoImagePipe implements PipeTransform {
     }
     if (images.length > 0) {
       return images[0].url;
+    } else {
+      return 'https://techcrunch.com/wp-content/uploads/2018/02/spotify-money.png?w=1390&crop=1';
     }
+
     return null;
   }
 
