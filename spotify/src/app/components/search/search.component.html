@@ -2,13 +2,13 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <input type="text" name="string" #str (change)="search(str.value)" placeholder="escribe aqui">
+                <input type="text" name="string" #str (keyup)="search(str.value)" placeholder="escribe aqui">
             </div>
         </div>
         <div class="row">
             <div *ngFor="let artist of artists" class="col-md-3">
                 <div class="card">
-                    <div>
+                    <div (click)="verArtista(artist.id)" style="cursor:pointer;">
                         <img class="card-img-top img-thumbnail"
                              src="{{ artist.images | noImage }}"
                              style="width:100%;" alt="Card image cap">

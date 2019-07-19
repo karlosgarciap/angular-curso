@@ -14,7 +14,7 @@ export class ToptracksComponent implements OnInit {
     this.activeRoutes.params.subscribe(params => {
 
       this._spotifyService.getTopTracksByArtistId(params.id).subscribe(
-          response => this.topTracks = response
+          (response) => {this.topTracks = response; console.log(response);}
       );
     });
   }

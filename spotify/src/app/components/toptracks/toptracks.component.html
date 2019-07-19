@@ -1,5 +1,10 @@
 <div class="container mt-5">
     <div class="row">
+        <div class="col-md-3 offset-9">
+            <a [routerLink]="['/search']" class="btn btn-outline-danger btn-block"> Volver atrás</a>
+        </div>
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <h1>Lista de Top Tracks</h1>
         </div>
@@ -9,8 +14,16 @@
             <table class="table">
                 <tbody>
                 <tr *ngFor="let track of topTracks.tracks">
+                    <td><img src="{{track.images | noImage}}" alt="" height="30"></td>
                     <td>{{track.name}}</td>
                     <td>{{track.album.name}}</td>
+                    <td>
+                        <audio controls>
+                            <source src="{{ track.preview_url }}" type="audio/ogg">
+                            <source src="{{ track.preview_url }}" type="audio/mpeg">
+                            Your browser does not support the audio element.
+                        </audio>
+                    </td>
                 </tr>
                 </tbody>
             </table>

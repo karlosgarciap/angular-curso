@@ -11,7 +11,7 @@ export class SpotifyService {
 
     constructor(private http: HttpClient) { }
 
-    accessToken = 'BQBwC10lpKxhWZzW6iiffD4n28BnfIQpykCTe0XVX_qkgHjikm6Q3gvuzovXgYh4G7ggdY8XwAG5jBRthDg';
+    accessToken = 'BQCf0h7NoRTN6ma52IcNE-FZPkSk5DhBDiuWgRLEBqLSaknMvFj4-3n1y6PpUrBhvTOsTeHPb612nAY4iLw';
 
     getQuery(query: string) {
             const url = 'https://api.spotify.com/v1/' + query;
@@ -36,13 +36,14 @@ export class SpotifyService {
 
     getArtistById(id) {
 
-        return this.getQuery('artists/' + id)
-            .pipe( map(data => data));
+        return this.getQuery('artists/' + id);
     }
 
     getTopTracksByArtistId(id) {
 
-        return this.getQuery('artists/' + id + '/top-tracks?country=ES')
-            .pipe( map(data => data));
+        return this.getQuery('artists/' + id + '/top-tracks?country=US');
     }
+
+    /* IMPORTANTE: Se usa el PIPE para filtrar y poder elegir que queremos recibir de toda la oinformacion que recibimos en una llamada */
+
 }
