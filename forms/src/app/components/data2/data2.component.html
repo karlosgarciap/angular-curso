@@ -1,0 +1,68 @@
+<h4>Formularios <small>template</small></h4>
+<hr>
+<form (ngSubmit)="guardarCambios()" [formGroup]="forma">
+
+    <div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Nombre</label>
+            <div class="col-8">
+
+                <input class="form-control"
+                       type="text"
+                       placeholder="Nombre"
+                       [formControlName]="nombre"
+                       [ngClass]="{ 'has-danger' : !forma.controls['nombreCompleto'].controls['nombre'].valid}">
+                <div *ngIf="forma.get('nombreCompleto.nombre').errors?.required" class="form-control-feedback">
+                    Este es un campo requerido
+                </div>
+                <div *ngIf="forma.get('nombreCompleto.nombre').errors?.minlength" class="form-control-feedback">
+                    El nombre no tiene una longitud correcta
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Apellido</label>
+            <div class="col-8">
+
+                <input class="form-control"
+                       type="text"
+                       placeholder="Apellido"
+                       [formControlName]="apellido"
+                       [ngClass]="{ 'has-danger' : !forma.controls['nombreCompleto'].controls['apellido'].valid}">
+                <div *ngIf="forma.get('nombreCompleto.apellido').errors?.required" class="form-control-feedback">
+                    Este es un campo requerido
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Correo</label>
+        <div class="col-md-8">
+            <input class="form-control"
+                   type="email"
+                   placeholder="Correo electrónico"
+                   [formControlName]="email"
+                   [ngClass]="{ 'has-danger' : !forma.controls['nombreCompleto.email'].controls['email'].valid}">
+            <div *ngIf="forma.get('nombreCompleto.email').errors?.pattern" class="form-control-feedback">
+                Ingresar email valido
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button [disabled]="forma.invalid" type="submit" class="btn btn-outline-primary">
+                Guardar
+            </button>
+        </div>
+    </div>
+
+</form>
